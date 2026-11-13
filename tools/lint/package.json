@@ -1,0 +1,13 @@
+{
+  "name": "lint",
+  "private": true,
+  "type": "module",
+  "description": "ESLint for the app (pnpm lint at the root), on TypeScript 6: typescript-eslint doesn't support 7 yet.",
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.12.0",
+    "globals": "17.13.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.1"
+  }
+}

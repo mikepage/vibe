@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "source": {
+    "name": "vibe",
+    "worker_loaders": [
+      {
+        "binding": "LOADER"
+      }
+    ],
+    "routes": [
+      {
+        "pattern": "vibe.example.com",
+        "custom_domain": true
+      }
+    ],
+    "workers_dev": false,
+    "preview_urls": false,
+    "ai": {
+      "binding": "AI"
+    },
+    "r2_buckets": [
+      {
+        "binding": "STORAGE",
+        "bucket_name": "vibe-storage"
+      }
+    ],
+    "d1_databases": [
+      {
+        "binding": "DB",
+        "database_name": "vibe-db",
+        "migrations_dir": "db/migrations"
+      }
+    ]
+  },
+  "resolved": {
+    "name": "vibe",
+    "worker_loaders": [
+      {
+        "binding": "LOADER"
+      }
+    ],
+    "routes": [
+      {
+        "pattern": "vibe.example.com",
+        "custom_domain": true
+      }
+    ],
+    "workers_dev": false,
+    "preview_urls": false,
+    "ai": {
+      "binding": "AI"
+    },
+    "r2_buckets": [
+      {
+        "binding": "STORAGE",
+        "bucket_name": "vibe-storage"
+      }
+    ],
+    "d1_databases": [
+      {
+        "binding": "DB",
+        "database_name": "vibe-db",
+        "migrations_dir": "db/migrations"
+      }
+    ],
+    "durable_objects": {
+      "bindings": [
+        {
+          "name": "APP_DATA",
+          "class_name": "AppDataDurableObject"
+        },
+        {
+          "name": "BUILDER",
+          "class_name": "BuilderDurableObject"
+        }
+      ]
+    },
+    "migrations": [
+      {
+        "tag": "void-durable-app-data-v1",
+        "new_sqlite_classes": [
+          "AppDataDurableObject"
+        ]
+      },
+      {
+        "tag": "void-durable-builder-v1",
+        "new_sqlite_classes": [
+          "BuilderDurableObject"
+        ]
+      }
+    ]
+  },
+  "text": "{\n  \"name\": \"vibe\",\n  \"worker_loaders\": [\n    {\n      \"binding\": \"LOADER\"\n    }\n  ],\n  \"routes\": [\n    {\n      \"pattern\": \"vibe.example.com\",\n      \"custom_domain\": true\n    }\n  ],\n  \"workers_dev\": false,\n  \"preview_urls\": false,\n  \"ai\": {\n    \"binding\": \"AI\"\n  },\n  \"r2_buckets\": [\n    {\n      \"binding\": \"STORAGE\",\n      \"bucket_name\": \"vibe-storage\"\n    }\n  ],\n  \"d1_databases\": [\n    {\n      \"binding\": \"DB\",\n      \"database_name\": \"vibe-db\",\n      \"migrations_dir\": \"db/migrations\"\n    }\n  ],\n  \"durable_objects\": {\n    \"bindings\": [\n      {\n        \"name\": \"APP_DATA\",\n        \"class_name\": \"AppDataDurableObject\"\n      },\n      {\n        \"name\": \"BUILDER\",\n        \"class_name\": \"BuilderDurableObject\"\n      }\n    ]\n  },\n  \"migrations\": [\n    {\n      \"tag\": \"void-durable-app-data-v1\",\n      \"new_sqlite_classes\": [\n        \"AppDataDurableObject\"\n      ]\n    },\n    {\n      \"tag\": \"void-durable-builder-v1\",\n      \"new_sqlite_classes\": [\n        \"BuilderDurableObject\"\n      ]\n    }\n  ]\n}\n"
+}

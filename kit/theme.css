@@ -1,0 +1,83 @@
+/*
+ * The kit's theme: Nuxt UI's design tokens for generated apps, which can't run Nuxt UI's
+ * Vue components. The same names and values as the platform's pages (primary green,
+ * neutral slate), so the kit's Tailwind classes read as Nuxt UI's do: text-muted,
+ * bg-elevated, border-default, bg-primary, text-error, rounded-md. lib/tailwind.ts
+ * compiles it with each app's classes; only the classes used end up in the bundle.
+ * Light only: app pages have no theme switch.
+ */
+@theme default inline {
+  --color-primary: var(--ui-primary);
+  --color-secondary: var(--ui-secondary);
+  --color-success: var(--ui-success);
+  --color-info: var(--ui-info);
+  --color-warning: var(--ui-warning);
+  --color-error: var(--ui-error);
+  --color-neutral-50: var(--color-slate-50);
+  --color-neutral-100: var(--color-slate-100);
+  --color-neutral-200: var(--color-slate-200);
+  --color-neutral-300: var(--color-slate-300);
+  --color-neutral-400: var(--color-slate-400);
+  --color-neutral-500: var(--color-slate-500);
+  --color-neutral-600: var(--color-slate-600);
+  --color-neutral-700: var(--color-slate-700);
+  --color-neutral-800: var(--color-slate-800);
+  --color-neutral-900: var(--color-slate-900);
+  --color-neutral-950: var(--color-slate-950);
+  --radius-xs: calc(var(--ui-radius) * 0.5);
+  --radius-sm: var(--ui-radius);
+  --radius-md: calc(var(--ui-radius) * 1.5);
+  --radius-lg: calc(var(--ui-radius) * 2);
+  --radius-xl: calc(var(--ui-radius) * 3);
+  --radius-2xl: calc(var(--ui-radius) * 4);
+  --text-color-dimmed: var(--ui-text-dimmed);
+  --text-color-muted: var(--ui-text-muted);
+  --text-color-toned: var(--ui-text-toned);
+  --text-color-default: var(--ui-text);
+  --text-color-highlighted: var(--ui-text-highlighted);
+  --text-color-inverted: var(--ui-text-inverted);
+  --background-color-default: var(--ui-bg);
+  --background-color-muted: var(--ui-bg-muted);
+  --background-color-elevated: var(--ui-bg-elevated);
+  --background-color-accented: var(--ui-bg-accented);
+  --background-color-inverted: var(--ui-bg-inverted);
+  --border-color-default: var(--ui-border);
+  --border-color-muted: var(--ui-border-muted);
+  --border-color-accented: var(--ui-border-accented);
+  --border-color-inverted: var(--ui-border-inverted);
+  --ring-color-default: var(--ui-border);
+  --ring-color-accented: var(--ui-border-accented);
+  --divide-color-default: var(--ui-border);
+  --outline-color-default: var(--ui-border);
+}
+
+@layer theme {
+  :root {
+    --ui-primary: var(--color-green-500);
+    --ui-secondary: var(--color-blue-500);
+    --ui-success: var(--color-green-500);
+    --ui-info: var(--color-blue-500);
+    --ui-warning: var(--color-yellow-500);
+    --ui-error: var(--color-red-500);
+    --ui-radius: 0.375rem;
+    --ui-text-dimmed: var(--color-slate-400);
+    --ui-text-muted: var(--color-slate-500);
+    --ui-text-toned: var(--color-slate-600);
+    --ui-text: var(--color-slate-700);
+    --ui-text-highlighted: var(--color-slate-900);
+    --ui-text-inverted: #fff;
+    --ui-bg: #fff;
+    --ui-bg-muted: var(--color-slate-50);
+    --ui-bg-elevated: var(--color-slate-100);
+    --ui-bg-accented: var(--color-slate-200);
+    --ui-bg-inverted: var(--color-slate-900);
+    --ui-border: var(--color-slate-200);
+    --ui-border-muted: var(--color-slate-200);
+    --ui-border-accented: var(--color-slate-300);
+    --ui-border-inverted: var(--color-slate-900);
+  }
+}
+
+@layer base {
+  body { -webkit-font-smoothing: antialiased; color: var(--ui-text); background: var(--ui-bg); }
+}

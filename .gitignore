@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.void/
+.wrangler/
+.env
+.test-build/
+*.log
+.cloudflare/
+.void-wrangler.jsonc
+.dev.vars
+.nuxt-ui/
+results/

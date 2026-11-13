@@ -1,0 +1,37 @@
+# The app, and its lint tool on TypeScript 6 (tools/lint).
+packages:
+  - .
+  - tools/*
+
+# Exact pins; no ^ or ~ ranges.
+saveExact: true
+savePrefix: ""
+
+# Packages that may run install scripts (native binaries).
+allowBuilds:
+  esbuild: true
+  workerd: true
+  # Optional; Vite, Void and Drizzle fall back without them.
+  sharp: false
+  "@parcel/watcher": false
+  better-sqlite3: false
+  # Picks Vue 2 or 3 at install; the default is Vue 3.
+  vue-demi: false
+
+minimumReleaseAgeExclude:
+  - '@better-auth/core@1.7.22'
+  - '@better-auth/drizzle-adapter@1.7.22'
+  - '@better-auth/kysely-adapter@1.7.22'
+  - '@better-auth/memory-adapter@1.7.22'
+  - '@better-auth/mongo-adapter@1.7.22'
+  - '@better-auth/prisma-adapter@1.7.22'
+  - '@better-auth/telemetry@1.7.22'
+  - better-auth@1.7.22
+  - miniflare@5.20261110.2-beta
+  - wrangler@4.161.0
+permissions:
+  void:
+    skills: [migrate-vite-cloudflare-to-void, void]
+skills:
+  dirs:
+    - .claude/skills

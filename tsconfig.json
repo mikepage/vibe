@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["@cloudflare/workers-types", "vite/client"],
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+    // The kit (vibe:app) and examples are Hono JSX; the pages are Vue, checked by the build.
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
+    "noUncheckedIndexedAccess": false,
+    "paths": {
+      "void/db": ["./.void/db.d.ts"],
+      "void/routes": ["./.void/routes.d.ts"],
+      "@schema": ["./db/schema.ts"],
+      "vibe:app": ["./kit/index.ts"]
+    }
+  },
+  "include": ["db", "lib", "routes", "pages", "src", "kit", "examples", "durable-objects", "middleware", "auth.ts", ".void/*.d.ts"]
+}
